@@ -1,0 +1,64 @@
+{
+  "name": "@tableau/query-graphs",
+  "version": "2.0.1",
+  "description": "Helping people see and understand queries.",
+  "homepage": "https://github.com/tableau/query-graphs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tableau/query-graphs.git",
+    "directory": "query-graphs"
+  },
+  "author": {
+    "name": "Adrian Vogelsgesang",
+    "email": "avogelsgesang@salesforce.com"
+  },
+  "contributors": [
+    {
+      "name": "Luis Enciso",
+      "email": "lenciso@tableau.com"
+    },
+    {
+      "name": "Rick Cole",
+      "email": "ricole@tableau.com"
+    },
+    {
+      "name": "Richard Wesley",
+      "email": "hawkfish@tableau.com"
+    }
+  ],
+  "license": "MIT",
+  "files": [
+    "lib/*.js",
+    "lib/*.d.ts",
+    "style/*.*"
+  ],
+  "directories": {
+    "lib": "lib/"
+  },
+  "style": "style/query-graphs.css",
+  "dependencies": {
+    "classcat": "^5.0.4",
+    "d3-flextree": "^2.1.2",
+    "d3-hierarchy": "^3.1.2",
+    "immer": "^10.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "reactflow": "^11.10.2",
+    "xml2js": "^0.5.0",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/d3-hierarchy": "^3.1.2",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css lib/",
+    "build": "yarn clean && tsc --build && yarn copy-files"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
+}

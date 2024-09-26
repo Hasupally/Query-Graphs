@@ -1,0 +1,26 @@
+/*
+  Using a 2 color palette technique. When styling symbols use
+  "fill: inherit" to use the 1st set of colors
+  "fill: currentColor" to use the 2nd set of colors
+  More info on techniques: http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css/
+*/
+
+/*
+ .expanded luminosity increased by (100 - collapsed luminosity) / 1.5
+*/
+
+.qg-icon {
+    height: 1.5em;
+    stroke-width: 0.8;
+    stroke: hsl(0, 0%, 40%);
+    color: hsl(0, 0%, 72%);
+}
+
+text.qg-table-text {
+    text-anchor: middle;
+    font-size: 7px;
+    font-weight: bold;
+    font-family: Monaco, Consolas, monospace;
+    stroke: none;
+    fill: hsl(0, 0%, 40%);
+}

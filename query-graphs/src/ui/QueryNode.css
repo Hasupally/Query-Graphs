@@ -1,0 +1,98 @@
+.qg-graph-node {
+    border: 1px solid transparent;
+    border-radius: .8em;
+    padding: .3em .5em;
+    margin: -.3em -.5em;
+    transition-property: border-color, background-color;
+    transition-duration: 0.2s;
+}
+.qg-graph-node.qg-no-props {
+    cursor: default;
+}
+.qg-graph-node.qg-collapsed:hover,
+.qg-graph-node.qg-expanded {
+    cursor: pointer;
+    background: white;
+    border-color: hsl(0,0%, 80%);
+    box-shadow: 1px 2px 5px hsl(0,0%,90%);
+}
+
+.query-graph .react-flow__handle.qg-subtree-handle {
+    font-size: .7em;
+    width: 1em;
+    height: 1em;
+    bottom: -.8em;
+    line-height: 1em;
+    text-align: center;
+    border-radius: 0.5em;
+    background: hsl(0,0%,85%);
+    cursor: pointer;
+    pointer-events: all;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.query-graph .react-flow__handle.qg-subtree-handle.qg-collapsed {
+    opacity: 0;
+}
+.query-graph .react-flow__node-querynode:hover .react-flow__handle.qg-subtree-handle {
+    opacity: 1;
+}
+
+.query-graph .react-flow__handle.qg-subtree-handle:hover {
+    background: hsl(0,0%,70%);
+}
+
+.qg-graph-node-head {
+    /* We don't want the node to automatically stretch/shrink with its container
+     * because that would trigger the `ResizeObserver` to  often and would cause too
+     * many layout recomputations.*/
+    width: max-content;
+    margin: auto;
+    text-align: center;
+}
+
+.qg-graph-node-label {
+    /*
+     * Clip the label at some length; long labels can become quite unreadable
+     */
+    max-width: 10em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /*
+     * We set up everything such that we can draw a nice background for the label.
+     * If the node label should be highlighted, a `background-color` is set from React.
+     */
+    border-radius: .4em;
+    padding: 0 .15em;
+}
+
+.qg-graph-node-body-wrapper {
+    max-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition-property: max-width, max-height;
+    transition-duration: .2s;
+}
+.qg-graph-node.qg-expanded .qg-graph-node-body-wrapper {
+    max-width: 30em;
+    max-height: 20em;
+}
+.qg-graph-node-body {
+    width: max-content;
+    height: max-content;
+    overflow: auto;
+    max-width: 30em;
+    max-height: 20em;
+}
+
+.qg-prop-name {
+    color: hsl(0, 0%, 50%);
+}
+
+.qg-prop-value {
+    -webkit-user-select: all;  
+    -moz-user-select: all;     
+    -ms-user-select: all;      
+    user-select: all;
+}
